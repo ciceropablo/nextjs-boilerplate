@@ -8,7 +8,9 @@
     "lint": "next lint --fix",
     "prettier": "prettier --write .",
     "typecheck": "tsc --project tsconfig.json --pretty --noEmit",
-    "test": "jest --watch"
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand"
   },
   "dependencies": {
     "next": "12.0.7",
