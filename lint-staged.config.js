@@ -1,8 +1,8 @@
 module.exports = {
   '*': 'prettier --ignore-unknown --write',
-  '*.ts?(x)': () => [
+  '*.ts?(x)': (filenames) => [
     'yarn typecheck',
     'yarn lint',
-    'yarn test --bail --findRelatedTests',
+    `yarn test --bail --findRelatedTests ${filenames.join(' ')}`,
   ],
 }
